@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Prova2Component } from './prova2.component';
+import { ProvaComponent } from './prova.component';
 
-describe('Prova2Component', () => {
-  let component: Prova2Component;
-  let fixture: ComponentFixture<Prova2Component>;
+describe('ProvaComponent', () => {
+  let component: ProvaComponent;
+  let fixture: ComponentFixture<ProvaComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [Prova2Component]
+      declarations: [ProvaComponent]
     });
-    fixture = TestBed.createComponent(Prova2Component);
+    fixture = TestBed.createComponent(ProvaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
