@@ -1,9 +1,22 @@
-<div *ngIF="!isProfile; else profiloContatto">
+<!-- Se nessun id viene specificato, mostra tutti i contatti  -->
+<div *ngIf="!isProfile; else profiloContatto">
+
     <h3>Lista contatti:</h3>
-    <ul *ngFor="let persona of persone">
-        <li>{{ persona.nome }} {{ persona.cognome }}</li>
+
+    <!-- Ciclo all'interno di persone per restituire lista completa di contatti + index per associare ad ogni contatto un numero -->
+    <ul *ngFor="let persona of persone; index as i">
+
+        <!-- Ogni persona mostrata in lista è collegata ad un router link, il router link chiama la rotta con l'id specifico di ogni utente (assegnata in index) -->
+        <a routerLink="/contact/{{i}}">
+            <li>{{ persona.nome }} {{ persona.cognome }}</li>
+        </a>
     </ul>
 </div>
-<div #profiloContatto>
-<p>Profilo di:</p>
-</div>
+
+<!-- Se un id viene specificato, is profile assume valore true e viene mostrato direttamente il contatto specifico  -->
+<ng-template #profiloContatto>
+    <!-- Quando carichiamo un profilo specifico, richiamiamo un altro componente che contiene tutte le informazioni del nostro singolo contatto -->
+    <app-single-contact [persona]="persona">
+
+    </app-single-contact>
+</ng-template>

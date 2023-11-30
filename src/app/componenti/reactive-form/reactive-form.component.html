@@ -1,0 +1,52 @@
+<form [formGroup]="homeform" (ngSubmit)="onSubmit()">
+    <!-- NOME -->
+
+    <!-- Messaggio errore nome non inserito -->
+    <h2 class="text-danger" *ngIf="homeform.get('nome')?.invalid && homeform.get('nome')?.touched">
+        Inserisci un nome
+    </h2>
+    <!-- Input -->
+    <mat-form-field>
+        <mat-label>Nome</mat-label>
+        <input matInput type="text" required formControlName="nome">
+    </mat-form-field>
+
+    <!-- COGNOME  -->
+    <!-- Messaggio errore cognome non inserito -->
+    <h2 class="text-danger" *ngIf="homeform.get('cognome')?.invalid && homeform.get('cognome')?.touched">
+        Inserisci un cognome
+    </h2>
+    <!-- Input -->
+    <mat-form-field>
+        <mat-label>Cognome</mat-label>
+        <input matInput type="text" required formControlName="cognome">
+    </mat-form-field>
+
+    <!-- EMAIL  -->
+    <!-- Messaggio errore indirizzo mail non inserito -->
+    <h2 class="text-danger" *ngIf="homeform.get('email')?.invalid && homeform.get('email')?.touched">
+        Inserisci un indirizzo mail
+    </h2>
+    <!-- Input -->
+    <mat-form-field>
+        <mat-label>eMail</mat-label>
+        <input matInput type="email" required formControlName="email">
+    </mat-form-field>
+
+    <!-- COLORE -->
+    <!-- Messaggio errore colore non selezionato -->
+    <h2 class="text-danger" *ngIf="homeform.get('colore')?.invalid && homeform.get('colore')?.touched">
+        Seleziona un colore
+    </h2>
+    <!-- Input -->
+    <mat-form-field>
+        <mat-label>Colore:</mat-label>
+        <mat-select name="colore" required formControlName="colore">
+            <mat-option value="Rosso">Rosso</mat-option>
+            <mat-option value="Blue">Blu</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <!-- SUBMIT - disabilitato se tutti i campi required non sono popolati  -->
+    <button type="submit" mat-raised-button color="primary">Salva</button>
+</form>

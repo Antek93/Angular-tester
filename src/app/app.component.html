@@ -2,13 +2,25 @@
     <li><a routerLink="/">Home</a></li>
     <li><a routerLink="about">About</a></li>
     <li><a routerLink="contact">Contatti</a></li>
+    <li><a routerLink="reactiveForm">Reactive Form</a></li>
+    <li><a routerLink="prova">Interval in console log</a></li>
+    <li><a routerLink="allcontacts">Ottieni tutti i contatti dal firebase</a></li>
+    <li><a routerLink="delete">Elimina contatto</a></li>
+    <li><a routerLink="modifica">Modifica contatto</a></li>
 </ul>
-
-<app-prova></app-prova>
+<div class="d-flex">
+    <div class="px-5 pb-3">
+        <a routerLink="registrazione">Sign-up</a>
+    </div>
+    <div class="px-5  pb-3">
+        <a routerLink="login">Login</a>
+    </div>
+</div>
 <!-- Area di lavoro  -->
 <router-outlet>
     <!-- Qui si vedranno i component che abbiamo definito su app-router -->
     <!-- <app-about></app-about> -->
     <!-- <app-contact></app-contact> -->
     <!-- <app-home></app-home -->
+    <!-- <app-reactive-form></app-reactive-form> -->
 </router-outlet>
